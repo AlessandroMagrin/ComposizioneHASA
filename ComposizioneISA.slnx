@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../EreditarietaIsa/EreditarietaIsa.csproj" />
+  <Project Path="Composizione.csproj" />
+</Solution>
