@@ -6,9 +6,59 @@ namespace Composizione
 {
     internal class CCilindro
     {
-        public double _altezza;
-        private double CCerchio _raggio;
-        private CPunto _x;
-        private CPunto _y;
+         private CCerchio _base;
+        private double _altezza;
+
+        /*
+        public CCerchio BaseCilindro {
+            get {return _base;}
+            set { _base = value;}
+        }
+
+        public double Altezza
+        {
+            get {return _altezza;}
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("L'altezza non può essere minore di Zero");
+                }
+                _altezza = value;
+            }
+        }
+        */
+
+        public CCilindro()
+        {
+            _base = new CCerchio();
+            _altezza = 1;
+        }
+
+        public CCilindro(double altezza, double raggio, int x, int y)
+        {
+
+            if (altezza <= 0)
+            {
+                throw new ArgumentException("L'altezza non può essere minore di Zero");
+            }
+            _altezza = altezza;
+            _base = new CCerchio(raggio,x,y);
+        }
+
+        public CCilindro(double altezza, CCerchio baseCilindro)
+        {
+            if (altezza <= 0)
+            {
+                throw new ArgumentException("L'altezza non può essere minore di Zero");
+            }
+            _altezza = altezza;
+            _base = baseCilindro;
+        }
+
+        public override string ToString()
+        {
+            return ("Altezza"+_altezza "Base:"+_base.ToString());
+        }
     }
 }
