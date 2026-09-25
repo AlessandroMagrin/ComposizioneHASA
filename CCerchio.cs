@@ -10,7 +10,7 @@ namespace Composizione
         private double _raggio;
        
         private CPunto _centro;
-
+        /*
         public double Raggio
         {
             get { return _raggio; }
@@ -23,6 +23,7 @@ namespace Composizione
                 _raggio = value;
             }
         }
+        */
 
         public CPunto Centro
         {
@@ -46,6 +47,12 @@ namespace Composizione
            
 
         }
+
+        public override string ToString()
+        {
+            return ("Raggio:"+_raggio+ "Centro:" +_centro.ToString()");
+        }
+
 
         
     }
